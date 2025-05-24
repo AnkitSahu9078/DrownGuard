@@ -35,7 +35,7 @@ DrownGuard is an intelligent drowning detection solution that leverages machine 
 ![Statistics Report](screenshots/statistics.png)
 
 #### 4.1 detection confidence scores
-![detection confidence](screenshots/statistics2.png)
+![detection confidence](screenshots/statistic2.png)
 
 
 ---
