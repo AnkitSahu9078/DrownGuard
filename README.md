@@ -1,101 +1,169 @@
-# DrownGuard: ML-Powered Drowning Detection and Alert Interface
 
-DrownGuard is an advanced drowning detection system that uses machine learning and computer vision to identify potential drowning incidents and trigger alerts in real-time.
+# 🌊 DrownGuard: ML-Powered Drowning Detection & Alert System
 
-## Features
+DrownGuard is an intelligent drowning detection solution that leverages machine learning and computer vision to identify potential drowning incidents in real time and trigger alerts. Designed for use in pools, water parks, and surveillance systems, it offers both web and command-line interfaces.
 
-- Real-time drowning detection using computer vision
-- Web-based interface for monitoring
-- Alerts when potential drowning is detected
-- Supports both video file input and webcam streams
+---
 
-## Technologies Used
+## 🚀 Features
 
-- Python
-- OpenCV
-- PyTorch
-- Flask
-- YOLO (You Only Look Once) object detection
-- Bootstrap
+- ⚡ Real-time drowning detection via video streams
+- 🎥 Supports both pre-recorded videos and webcam input
+- 🌐 Web interface for live monitoring
+- 🔔 Visual and audio alerts on potential drowning events
+- 📊 Modular architecture with custom ML and CV pipelines
 
-## Installation
+- 📈 Generates detailed statistical reports based on each session:
+  - Detection confidence scores
+  - Number of people detected per frame
+  - Frame processing time and FPS
 
-1. Clone this repository:
-   ```bash
-   git clone https://github.com/YOUR_USERNAME/DrownGuard.git
-   cd DrownGuard
-   ```
+---
 
-2. Create and activate a virtual environment:
-   ```bash
-   python -m venv venv
-   venv\Scripts\activate  # On Windows
-   ```
+## 🖼️ Screenshots
 
-3. Install dependencies:
-   ```bash
-   pip install -r requirements.txt
-   ```
+### 1. Web Interface - Upload Page
+![Web Interface Upload](screenshots/web_interface.png)
 
-4. Download required model files:
-   - The application will automatically download YOLO weights and configuration files on first run
+### 2. Real-Time Detection
+![Real-Time Detection](screenshots/realtime_detection.png)
 
-## Usage
+### 3. Drowning Alert Display
+![Drowning Alert](screenshots/drowning_alerts.png)
 
-### Web Interface
+### 4. Statistics Report
+![Statistics Report](screenshots/statistics.png)
+![Statistics Report](screenshots/statistics2.png)
 
-1. Start the Flask web server:
+
+---
+
+## 🛠️ Technologies Used
+
+- **Python**
+- **OpenCV**
+- **PyTorch**
+- **Flask**
+- **YOLOv3(You Only Look Once)** – for object detection
+- **HTML, CSS, JS** – for responsive web UI
+
+---
+
+## 📦 Installation Guide
+
+### 1. Clone the repository
+```bash
+git clone https://github.com/YOUR_USERNAME/DrownGuard.git
+cd DrownGuard
+```
+
+### 2. Set up the virtual environment
+```bash
+python -m venv venv
+venv\Scripts\activate  # On Windows
+# OR
+source venv/bin/activate  # On macOS/Linux
+```
+
+### 3. Install required packages
+```bash
+pip install -r requirements.txt
+```
+
+> 📝 **Note:** Make sure you have Python 3.8+ and pip installed.
+
+### 4. Download Model Files
+- The application will automatically download required YOLO weights and configs on the first run.
+- If not, you can manually download them from the [official YOLO website](https://pjreddie.com/darknet/yolo/).
+
+---
+
+## 🚦 Usage Instructions
+
+### 🔹 Web Interface
+1. Launch the Flask web server:
    ```bash
    python app.py
    ```
 
-2. Open a web browser and navigate to:
+2. Open your browser and visit:
    ```
    http://127.0.0.1:5000
    ```
 
-3. Upload a video file or use a webcam stream to begin drowning detection
+3. Upload a video file or start the webcam to initiate real-time detection.
 
-### Command Line Interface
+### 🔹 Command-Line Interface
 
-For direct video file analysis:
+#### Analyze a video file:
 ```bash
 python DrownDetect.py --source your_video_file.mp4
 ```
 
-For webcam input:
+#### Use webcam stream (default is 0):
 ```bash
 python DrownDetect.py --source 0
 ```
 
-## How It Works
+---
 
-DrownGuard uses a two-stage detection approach:
+## 🧠 How It Works
 
-1. **Person Detection**: Uses YOLO to identify people in the video frame  
-2. **Drowning Classification**:  
-   - For single person: Uses a custom CNN model to classify swimming behavior as normal or drowning  
-   - For multiple people: Uses proximity-based logic to detect potential drowning incidents
+### Detection Workflow:
 
-When drowning is detected, the system:
-- Displays a visual alert with red bounding boxes
-- Triggers an audio alarm
+1. **Person Detection**  
+   - Uses YOLOv3 or YOLOv5 to detect individuals in each frame.
 
-## Project Structure
+2. **Behavior Classification**  
+   - For a **single person**: A custom-trained CNN model classifies swimming behavior as *normal* or *drowning*.
+   - For **multiple people**: A proximity-based logic evaluates potential drowning based on movement patterns and distances.
 
-- `app.py`: Flask web application  
-- `DrownDetect.py`: Command-line interface for drowning detection  
-- `cvlib/`: Custom computer vision library  
-- `templates/`: HTML templates for the web interface  
-- `static/`: CSS, JavaScript, and other static assets  
-- `model.pth`: PyTorch model for drowning detection  
-- `lb.pkl`: Label binarizer for classification  
+### Alerts:
+- **Red bounding boxes** for drowning detection.
+- **Audio alarms** triggered via the web interface.
 
-## License
+---
 
-[MIT License](LICENSE)
+## 📁 Project Structure
 
-## Acknowledgments
+```
+DrownGuard/
+│
+├── app.py              # Flask web app
+├── DrownDetect.py      # CLI detection tool
+├── requirements.txt    # Python dependencies
+├── model.pth           # PyTorch CNN model
+├── lb.pkl              # Label binarizer
+│
+├── templates/          # HTML templates
+├── static/             # CSS, JS, assets
+├── screenshots/        # Images for documentation
+└── cvlib/              # Custom vision utilities
+```
 
-- YOLO for object detection  
-- PyTorch for deep learning framework
+---
+
+## 🔐 Best Practices
+
+- Never upload large files or environment folders (like `env/`) to GitHub.
+- Use `.gitignore` to avoid tracking virtual environments and binaries:
+  ```plaintext
+  env/
+  *.dll
+  *.pyd
+  *.lib
+  *.exe
+  ```
+
+---
+
+
+## 🙏 Acknowledgments
+
+- **YOLO** – For robust object detection
+- **PyTorch** – For training and deploying the CNN model
+- OpenCV, Flask, HTML, CSS, JS – For building the full-stack system
+
+---
+
+> 🔍 Have questions or need help? Open an [issue on GitHub](https://github.com/YOUR_USERNAME/DrownGuard/issues).
