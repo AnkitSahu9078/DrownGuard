@@ -1,0 +1,37 @@
+# Virtual Environment
+env/
+venv/
+ENV/
+VENV/
+
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Distribution / packaging
+dist/
+build/
+*.egg-info/
+
+# Jupyter Notebook
+.ipynb_checkpoints
+
+# Local configuration
+.env
+.vscode/
+.idea/
+
+# OS specific files
+.DS_Store
+Thumbs.db
+
+# Temporary files
+*.log
+*.tmp
+
+# Uploaded and generated content
+uploads/*
+!uploads/.gitkeep
+videos/*
+!videos/.gitkeep

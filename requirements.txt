@@ -1,0 +1,47 @@
+# Core Framework
+flask==2.3.3
+werkzeug==2.3.7
+
+# ML & Model Dependencies
+torch==2.2.0
+numpy==1.22.0
+scikit-learn==1.0.2
+joblib==1.3.2
+albumentations==1.3.1
+Pillow==10.2.0
+
+# Computer Vision
+opencv-python==4.8.1.78
+opencv-python-headless==4.8.1.78
+cvlib==0.2.7  # still required for object detection (keep if used in your model)
+
+# Visualization & Utilities
+matplotlib==3.5.3
+imageio==2.31.2
+scikit-image==0.19.3
+PyWavelets==1.3.0
+tifffile==2021.11.2
+networkx==2.6.3
+
+# Other Dependencies
+requests==2.32.2
+urllib3==2.0.7
+certifi==2024.7.4
+charset-normalizer==3.3.2
+idna==3.6
+packaging==23.2
+pyparsing==3.1.1
+python-dateutil==2.8.2
+typing-extensions==4.8.0
+cycler==0.11.0
+kiwisolver==1.4.5
+fonttools==4.43.0
+six==1.16.0
+future==0.18.3
+qudida==0.0.4
+iso8601==2.1.0
+serial==0.0.97
+playsound==1.3.0
+progressbar==2.5
+threadpoolctl==3.1.0
+PyYAML==6.0.1
